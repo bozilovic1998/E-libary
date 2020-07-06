@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bibliotekar - Prijava</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style_log_reg.css'>
+    <link rel='stylesheet' href='/stylesheets/style_log_reg_2.css'>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-transparent navbar-transparent " style="color: #008ae6;">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mynav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                Bibliotekar
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/">Korisnik</a>
+                <a class="dropdown-item" href="/a_prijava">Administrator</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <div class="formholder">
+        <div class="titleHolder">
+            <!--        <i class="far fa-user-circle"></i>-->
+            <img src="/images/logo.png"/>
+            <h1>Bibliotekar</h1>
+        </div>
+        <form action="/bibliotekar" method="POST" class="loginForm">
+            <div class="row">
+                <input type="text" placeholder="Korisničko ime" name="b_korisnicko_ime"  required />
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="row">
+                <input type="password" placeholder="Lozinka" name="b_lozinka" required />
+                <i class="fas fa-key"></i>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn text-white">Prijavi se</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

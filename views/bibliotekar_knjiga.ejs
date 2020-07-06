@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bibliotekar - Knjiga </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style_bibliotekar.css'>
+</head>
+<body>
+
+<nav class="navbar">
+    <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
+    <% data.forEach(function(i) { %>
+    <ul class="navbar-nav">&nbsp;&nbsp; <%= i.naziv %></ul>
+    <% }) %>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="/b_knjige" style="color: white; font-weight: bold; font-size: 20px;"><i class='fas fa-book-open text-white'></i>&nbsp; Knjige</a>
+    <a href="/b_autori" style="font-size: 20px;"><i class="fas fa-pencil-alt text-white"></i>&nbsp; Autori</a>
+    <a href="/b_logout" style="font-size: 20px;"><i class="fas fa-sign-out-alt"></i>&nbsp; Odjavi se</a>
+</div>
+
+<div class="container h-100 my-5">
+    <div class="row align-items-center h-100 py-5">
+            <table class="table">
+                <% data.forEach(function(i) { %>
+                    <tbody>
+                    <tr>
+                        <th>Naziv knjige</th>
+                        <td><%= i.naziv %></td>
+                    </tr>
+                    <tr>
+                        <th>Ime autora</th>
+                        <td><a style="font-weight: bold; color: #008ae6;" href="/b_knjige_autora/<%= i.id%>"><%= i.ime_prezime%></a></td>
+                    </tr>
+                    <tr>
+                        <th>ID autora</th>
+                        <td><%= i.autor_id%></td>
+                    </tr>
+                    <tr>
+                        <th>Žanr</th>
+                        <td><%= i.zanr %></td>
+                    </tr>
+                    <tr>
+                        <th>Izdavač</th>
+                        <td><%= i.izdavac %></td>
+                    </tr>
+                    <tr>
+                        <th>Broj strana</th>
+                        <td><%= i.broj_strana %></td>
+                    </tr>
+                    <tr>
+                        <th>Godina izdavanja</th>
+                        <td><%= i.godina_izdavanja %></td>
+                    </tr>
+                    <tr>
+                        <th>Jezik</th>
+                        <td><%= i.jezik %></td>
+                    </tr>
+                    </tbody>
+                    <% }) %>
+            </table>
+        </div>
+</div>
+<% citanje.forEach(function(x) { %>
+<div id="modalbook" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><%= x.naziv %></h4>
+                <button type="button" style="outline: none;" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <center><img src="/images/logo.png"/></center>
+                <br/>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+<% }) %>
+
+<script>
+    function openSlideMenu(){
+        document.getElementById('side-menu').style.width = '250px';
+        document.getElementById('main').style.marginLeft = '250px';
+    }
+
+    function closeSlideMenu(){
+        document.getElementById('side-menu').style.width = '0';
+        document.getElementById('main').style.marginLeft = '0';
+    }
+</script>
+
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+</body>
+</html>
+
+

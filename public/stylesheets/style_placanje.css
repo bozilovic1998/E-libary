@@ -1,0 +1,67 @@
+body {
+    margin:50px auto; width:600px;
+    font: 400 18px/1.5 'Quicksand', sans-serif;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="number"]
+{
+    background: none;
+    border: none !important;
+    border-bottom: 1px solid #000000;
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+    outline: none !important;
+    height: 50px;
+    color: #333;
+    transition: border 0.3s linear, color 0.3s linear;
+    font: 400 18px/1.5 'Quicksand', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none !important;
+    border: 0px !important;
+    color: #000000;
+}
+
+.btn {
+    background: #008ae6;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+    font: 400 18px/1.5 'Quicksand', sans-serif;
+    transition: background 0.3s linear;
+}
+
+.btn:hover {
+    background: #2574A9;
+    color: white;
+}
+
+.btn:focus {
+    outline: 1px dotted #333;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #008ae6;
+}
+
+::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #333;
+}
+
+::-ms-input-placeholder {
+    color: #333;
+}

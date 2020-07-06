@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bibliotekar - Nova knjiga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style_bibliotekar.css'>
+</head>
+<body>
+    
+<nav class="navbar">
+    <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
+    <ul class="navbar-nav">&nbsp; Bibliotekar - Nova Knjiga</ul>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="/b_knjige" style="color: white; font-weight: bold; font-size: 20px;"><i class='fas fa-book-open text-white'></i>&nbsp; Knjige</a>
+    <a href="/b_autori" style="font-size: 20px;"><i class="fas fa-pencil-alt text-white"></i>&nbsp; Autori</a>
+    <a href="/b_logout" style="font-size: 20px;"><i class="fas fa-sign-out-alt"></i>&nbsp; Odjavi se</a>
+</div>
+
+<div class="container">
+    <div class="formholder">
+        <form action="/b_nova_knjiga" method="POST">
+            <div class="row form-group">
+                <input type="text" placeholder="Naziv knjige" name="naziv" required>
+                <i class="fas fa-book-open"></i>
+            </div>
+            <div class="row form-group">
+                <input type="text" placeholder="Žanr" name="zanr" required>
+                <i class="fas fa-list"></i>
+            </div>
+            <div class="row form-group">
+                <input type="text"  placeholder="Izdavač" name="izdavac" required>
+                <i class="fas fa-th-list"></i>
+            </div>
+            <div class="row form-group">
+                <input type="text"  placeholder="Broj strana" name="broj_strana" required>
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="row form-group">
+                <input type="text"  placeholder="Godina izdavanja" name="godina_izdavanja" required>
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="row form-group">
+                <input type="text"  placeholder="Jezik" name="jezik" required>
+                <i class="fas fa-globe"></i>
+            </div>
+            <div class="row form-group">
+                <select class="form-control custom-select" name="autor_id">
+                    <option disabled selected>Autor</option>
+                    <% result.forEach(function(i) { %>
+                    <option><%=i.id%> - <%= i.ime_prezime %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="row form-group">
+                <span><a style="font-weight: bold; font-size: 1em;" href="/upload">Dodaj </a> .pdf fajl knjige</span>
+            </div>
+            <div class="row form-group">
+                <button type="submit" class="btn text-white">Sačuvaj</button>
+            </div>
+            <p style="font-size: 15px;"><span style="color: red; font-weight: bold">&#10033;</span> U slučaju da se prilikom dodavanja knjige, ime autora ne nalazi u padajućoj listi, autora je neophodno dodati <a style="font-weight: bold" href="/b_autori">ovde.</a></p>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="javascripts/bibliotekar_script.js"></script>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
+
+

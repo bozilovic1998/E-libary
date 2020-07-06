@@ -1,0 +1,176 @@
+body {
+  font: 400 18px/1.5 'Quicksand', sans-serif;
+  color: #000000;
+}
+
+.container {
+  margin-top: 10px;
+  max-width: 640px;
+}
+
+/*
+INPUT BOX
+------------------------------------------------
+*/
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 15px 15px 15px 35px;
+  width: 100%;
+  height: 50px;
+  color: #333;
+  transition: border 0.3s linear, color 0.3s linear;
+  font: 400 18px/1.5 'Quicksand', sans-serif;
+}
+
+input[type="text"] + .fas,
+input[type="password"] + .fas,
+input[type="email"] + .fas {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: color 0.3s linear;
+  color: #000000;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #008ae6;
+  color: #000000;
+}
+
+input[type="text"]:focus + .fas,
+input[type="password"]:focus + .fas,
+input[type="email"]:focus + .fas {
+  color: #008ae6;
+}
+
+/*
+BUTTON
+------------------------------------------------
+*/
+.btn {
+  background: #008ae6;
+  border: none;
+  color: #fff;
+  padding: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+  cursor: pointer;
+  font: 400 18px/1.5 'Quicksand', sans-serif;
+  transition: background 0.3s linear;
+}
+
+.btn:hover {
+  background: #2574A9;
+  color: #000000;
+}
+
+.btn:focus,
+.forgotPwd:focus {
+  outline: 1px dotted #333;
+}
+
+/*
+INPUT BOX PLACEHOLDER COLORS
+------------------------------------------------
+*/
+::placeholder {
+  color: #333;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #333;
+}
+
+::-ms-input-placeholder {
+  color: #333;
+}
+
+/*
+LOGIN & REG FORM
+------------------------------------------------
+*/
+.formholder {
+  /*padding: 70px 40px;*/
+  text-align: center;
+}
+
+.formholder .titleHolder {
+  margin: 0 0 0px;
+}
+
+.formholder .titleHolder .far {
+  font-size: 70px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.formholder h1 {
+  font-size: 40px;
+  margin: 0 0 20px;
+}
+
+.formholder a {
+  color: #333;
+  transition: color 0.3s linear;
+}
+
+.formholder a:hover {
+  color: #2574A9;
+}
+
+.formholder .row {
+  position: relative;
+  margin: 0 0 20px;
+}
+
+.formholder form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.formholder form a {
+  font-size: 14px;
+}
+
+#navbardrop{
+  color: #008ae6;
+  font-weight: bold;
+  outline: none;
+  text-shadow: transparent;
+  text-decoration:none;
+  background: none;
+}
+
+#navbardrop:hover{
+  color: #000000;
+  outline: none;
+  text-shadow: transparent;
+  text-decoration:none;
+  background: none;
+}
+
+.dropdown-item{
+  color: #000000;
+  outline: none;
+  text-shadow: transparent;
+  text-decoration:none;
+  background: none;
+}
+.dropdown-item:hover{
+  color: #000000;
+  font-weight: bold;
+  outline: none;
+  text-shadow: transparent;
+  text-decoration:none;
+  background: none;
+}

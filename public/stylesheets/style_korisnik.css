@@ -1,0 +1,189 @@
+body{
+    font: 400 18px/1.5 'Quicksand', sans-serif;
+    color: #000000;
+    overflow-x:hidden;
+}
+
+.navbar{
+    background-color: #008ae6;
+    overflow:hidden;
+    height:63px;
+    width: 100%;
+    display: block;
+}
+
+.navbar-nav {
+
+    padding-top: 0px;
+    font-size: 24px;
+    color: white;
+}
+
+.navbar a{
+    float:left;
+    display:block;
+    color:#f2f2f2;
+    text-align:center;
+    padding:12px;
+    text-decoration:none;
+    font-size:17px;
+}
+
+.navbar ul{
+    margin:8px 0 0 0;
+    list-style:none;
+}
+
+.navbar a:hover{
+
+    color: #000000;
+}
+
+.side-nav{
+    margin-top: 0px;
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    background-color: #0d0d0d;
+    opacity:0.9;
+    overflow-x:hidden;
+    padding-top:60px;
+    transition:0.5s;
+
+}
+
+.side-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration:none;
+    font-size:22px;
+    color:#ccc;
+    display:block;
+    transition:0.3s;
+}
+
+.side-nav a:hover{
+    color:#fff;
+}
+
+.side-nav .btn-close{
+    position:absolute;
+    top:0;
+    right:22px;
+    font-size:36px;
+    margin-left:50px;
+}
+
+.btn {
+    background: #008ae6;
+    border: none;
+
+}
+.btn:hover {
+    background: #2574A9;
+}
+
+@media(max-width:568px){
+    .navbar-nav{display:none}
+}
+
+@media(min-width:568px){
+    /*.open-slide{display:none}*/
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+    height: 50px;
+    color: #333;
+    transition: border 0.3s linear, color 0.3s linear;
+    font: 400 18px/1.5 'Quicksand', sans-serif;
+}
+
+input[type="text"] + .fas,
+input[type="password"] + .fas,
+input[type="email"] + .fas {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: color 0.3s linear;
+    color: #000000;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #008ae6;
+    color: #000000;
+}
+
+input[type="text"]:focus + .fas,
+input[type="password"]:focus + .fas,
+input[type="email"]:focus + .fas {
+    color: #008ae6;
+}
+
+::placeholder {
+    color: #333;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #333;
+}
+
+::-ms-input-placeholder {
+    color: #333;
+}
+
+.formholder {
+    /*padding: 70px 40px;*/
+    text-align: center;
+}
+
+.formholder .titleHolder {
+    margin: 0 0 0px;
+}
+
+.formholder .titleHolder .far {
+    font-size: 70px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.formholder h1 {
+    font-size: 40px;
+    margin: 0 0 20px;
+}
+
+.formholder a {
+    color: #333;
+    transition: color 0.3s linear;
+}
+
+.formholder a:hover {
+    color: #2574A9;
+}
+
+.formholder .row {
+    position: relative;
+    margin: 0 0 20px;
+}
+
+.formholder form {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.formholder form a {
+    font-size: 14px;
+}

@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bibliotekar - Autori</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style_admin.css'>
+</head>
+<body>
+<nav class="navbar">
+    <span class="open-slide">
+      <a href="#" onclick="openSlideMenu()">
+        <svg width="30" height="30">
+            <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+        </svg>
+      </a>
+    </span>
+    <ul class="navbar-nav">&nbsp; Bibliotekar - Autori</ul>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <a href="/b_knjige" style=" font-size: 20px;"><i class='fas fa-book-open text-white'></i>&nbsp; Knjige</a>
+    <a href="/b_autori" style="color: white; font-weight: bold; font-size: 20px;"><i class="fas fa-pencil-alt text-white"></i>&nbsp; Autori</a>
+    <a href="/b_logout" style="font-size: 20px;"><i class="fas fa-sign-out-alt"></i>&nbsp; Odjavi se</a>
+</div>
+
+<div class="container">
+    <div class="row my-5 justify-content-end">
+        <a class="btn text-white" data-toggle="modal" data-target="#modalnew" role="button">Dodaj autora</a>
+    </div>
+    <div class='table-responsive-sm'>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ime i prezime</th>
+                <th scope="col">Godina rođenja</th>
+                <th scope="col">Mesto rođenja</th>
+                <th scope="col">Država</th>
+                <th scope="col">Akcije</th>
+            </tr>
+            </thead>
+            <% data.forEach(function(i) { %>
+                <tbody>
+                <tr>
+                    <td><%= i.id%></td>
+                    <td><a style="font-weight: bold; color: #008ae6;" href="/b_knjige_autora/<%= i.id%>"><%= i.ime_prezime%></a></td>
+                    <td><%= i.godina_rodjenja%></td>
+                    <td><%= i.mesto_rodjenja%></td>
+                    <td><%= i.drzava%></td>
+                    <td>
+                        <a href="/b_autori/izmeni/<%= i.id %>" class="icon-btn text-warning" data-toggle="modal" data-target="#modaledit<%= i.id %>" role="button"><i class="fas fa-edit"></i></a>
+                        <a href="/b_autori/izbrisi/<%= i.id %>" onclick="return confirm('Da li ste sigurni da želite da obrišete navedenog autora?')" class="icon-btn text-danger" role="button"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                <div id="modaledit<%= i.id %>" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Autor - izmena</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="formholder">
+                                        <form action="/b_autori/izmeni/<%= i.id %>" method="POST">
+                                            <div class="row form-group">
+                                                <input type="hidden" name="id" value="<%= i.id%>"/>
+                                                <input type="text" placeholder="Ime i prezime" name="ime_prezime" value="<%= i.ime_prezime%>">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <div class="row form-group">
+                                                <input type="text" placeholder="Godina rođenja" name="godina_rodjenja" value="<%= i.godina_rodjenja%>">
+                                                <i class="fas fa-calendar-alt"></i>
+                                            </div>
+                                            <div class="row form-group">
+                                                <input type="text" placeholder="Mesto rođenja" name="mesto_rodjenja" value="<%= i.mesto_rodjenja%>">
+                                                <i class="fas fa-map-marker"></i>
+                                            </div>
+                                            <div class="row form-group">
+                                                <input type="text" placeholder="Država" name="drzava" value="<%= i.drzava%>">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="row form-group">
+                                                <input type="submit" class="btn btn-primary text-white" value="Sačuvaj">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-default" data-dismiss="modal" style="border: none; outline: none;">Otkaži</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </tbody>
+            <% }) %>
+        </table>
+    </div>
+</div>
+
+<div id="modalnew" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Novi autor</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="formholder">
+                        <form action="/b_autori" method="POST">
+                            <div class="row form-group">
+                                <input type="text" placeholder="Ime i prezime" name="ime_prezime" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="row form-group">
+                                <input type="text" placeholder="Godina rođenja" name="godina_rodjenja" required>
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="row form-group">
+                                <input type="text" placeholder="Mesto rođenja" name="mesto_rodjenja" required>
+                                <i class="fas fa-map-marker"></i>
+                            </div>
+                            <div class="row form-group">
+                                <input type="text" placeholder="Država" name="drzava" required>
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="row form-group">
+                                <input type="submit" class="btn btn-primary text-white" value="Sačuvaj">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-default" data-dismiss="modal" style="border: none; outline: none;">Otkaži</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="javascripts/bibliotekar_script.js"></script>
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
+
+

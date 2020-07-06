@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uplata</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel='stylesheet' href='/stylesheets/style_placanje.css' />
+</head>
+<body>
+
+<section class="py-5">
+    <div class="container">
+        <div class="card-body p-5">
+            <ul class="nav bg-light nav-pills rounded nav-fill mb-3" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                        <i class="fa fa-credit-card"></i> Kreditna kartica</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                        <i class="fab fa-paypal"></i> Paypal</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="nav-tab-card">
+                    <!-- <p class="alert alert-success"></p> -->
+                    <form action="" method="">
+                        <div class="form-group">
+                            <label for="username">Ime i prezime</label>
+                            <input type="text" class="form-control" placeholder="Petar Petrović" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardNumber">Broj kartice</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="1234  5678  9876  5432" required>
+                                <div class="input-group-append">
+					        <span class="input-group-text text-muted border-0">
+					          <i class="fab fa-cc-visa"></i>&nbsp;<i class="fab fa-cc-amex"></i>&nbsp;<i class="fab fa-cc-mastercard"></i>
+					        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label><span class="hidden-xs">Važi do</span> </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" placeholder="MM" name="" required>
+                                        <input type="number" class="form-control" placeholder="YY" name="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label data-toggle="tooltip">CVV <span title="Poslednja 3 broja na poleđini kartice."><i class="fa fa-question-circle text-muted"></i></span></label>
+                                    <input type="number" class="form-control" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn">Potvrdi</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="nav-tab-paypal">
+                    <p>
+                        <button type="button" class="btn btn-primary"> <i class="fab fa-paypal"></i> Prijavi se na Paypal nalog</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</body>
+</html>

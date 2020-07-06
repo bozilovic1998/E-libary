@@ -1,0 +1,24 @@
+Administrator:
+
+Korisničko ime: admin	
+
+Lozinka: admin
+
+
+Bibliotekar:
+
+Korisničko ime: bibliotekar	
+
+Lozinka: bibliotekar
+
+E-mail: bibliotekar@gmail.com
+
+
+
+Korisnik:
+
+Korisničko ime: korisnik
+
+Lozinka: korisnik
+
+E-mail: korisnik@gmail.com
